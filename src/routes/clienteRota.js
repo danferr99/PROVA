@@ -10,8 +10,8 @@ const routes = Router();
 
 routes.post('/', ClienteValidationRules(), validate, (request, response) => {
 
-    const { nome, cpf, idade , salarioBruto, qtdeDependentes, empregado, tempoDeAtuacao, restSerasa, classificacaoCliente  } = request.body;
-    const novoCliente = {nome, cpf, idade , salarioBruto, qtdeDependentes, empregado, tempoDeAtuacao, restSerasa, classificacaoCliente };
+    const { nome, cpf, idade , salarioBruto, qtdeDependentes, empregado, tempoDeAtuacao, restSerasa  } = request.body;
+    const novoCliente = {nome, cpf, idade , salarioBruto, qtdeDependentes, empregado, tempoDeAtuacao, restSerasa  };
     const ClienteRetorno = clienteService.regrasCredito(novoCliente);
    return response.status(201).json({ ClienteRetorno });
 

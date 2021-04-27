@@ -24,7 +24,7 @@ module.exports.regrasCredito = function(novoCliente) {
                 Limite: this.porcentagemLimite(novoCliente.salarioBruto, 10)
             }
         }
-        else if(cliente.RestricaoSerasa == true && cliente.Emprego == true && novoCliente.tempoAtuacao >= 12){
+        else if(novoCliente.RestricaoSerasa == true && cliente.Emprego == true && novoCliente.tempoAtuacao >= 12){
             retorno = {
                 Mensagem:"Limite de 20% do salário bruto disponível", 
                 Limite: this.porcentagemLimite(novoCliente.salarioBruto, 20)
